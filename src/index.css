@@ -28,3 +28,9 @@
 .group:hover .hidden {
   display: block;
 }
+.group:hover svg{
+  display: none;
+}
+.rotate{
+  transform: rotate(180deg);
+}
