@@ -24,3 +24,7 @@
   transform: scale(0.8);
   transition: transform 0.5s ease-in-out;
 }
+
+.group:hover .hidden {
+  display: block;
+}
