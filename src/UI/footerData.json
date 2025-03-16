@@ -1,0 +1,23 @@
+[
+   {
+      "id": 1,
+      "find": "Find us",
+      "place": "Chandigarh, Punjab",
+      "icon": "location",
+      "link": "https://maps.app.goo.gl/tPxex6qsRLHoXR9a9"
+   },
+   {
+      "id": 2,
+      "find": "Call us",
+      "place": "+917234567890",
+      "icon": "call",
+      "link":"tel:+917814779665"
+   },
+   {
+      "id": 3,
+      "find": "Email us",
+      "place": "somyranjank@gmail.com",
+      "icon": "email",
+      "link":"mailto:somyranjank@gmail.com"
+   }
+]

@@ -1,0 +1,26 @@
+@import "tailwindcss";
+:root {
+  font-family: urbanist;
+}
+:root {
+  color: #f7f3f3;
+  background-color: #000000;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+#chk:checked ~ .login {
+  transform: translateY(-66%);
+  transition: transform 0.8s ease-in-out;
+}
+
+#chk:checked ~ .signup label {
+  transform: scale(0.6);
+  transition: transform 0.5s ease-in-out;
+}
+
+#chk:not(:checked) ~ .login label {
+  transform: scale(0.8);
+  transition: transform 0.5s ease-in-out;
+}

@@ -1,0 +1,65 @@
+[
+    {
+        "id":1,
+        "Country":"World",
+        "Capital":"No Capital",
+        "Population":"8.2 Billion",
+        "Facts":"There are 195 countries in the world today, including 193 United Nations member states and 2 observer states."
+    },
+    {
+        "id":2,
+        "Country":"India",
+        "Capital":"New Delhi",
+        "Population":"1.4 Billion",
+        "Facts":"India is the largest democracy in the world in terms of population. It is the second most populous country in the world after China."
+    },
+    {
+        "id":3,
+        "Country":"Nepal",
+        "Capital":"Kathmandu",
+        "Population":"30.55 Million",
+        "Facts":"Nepal is home to Mount Everest, the tallest mountain in the world, standing at 8,848 meters."
+    },
+    {
+        "id":4,
+        "Country":"Egypt",
+        "Capital":"Cairo",
+        "Population":"110.99 Million",
+        "Facts":"The Pyramids of Giza are one of the Seven Wonders of the Ancient World"
+    },
+    {
+        "id":5,
+        "Country":"Australia",
+        "Capital":"Canberra",
+        "Population":"25.98 Million",
+        "Facts":"Australia is home to the Great Barrier Reef, the largest coral reef system in the world"
+    },
+    {
+        "id":6,
+        "Country":"China",
+        "Capital":"Beijing",
+        "Population":"1.4 Billion",
+        "Facts":"The Great Wall of China is visible from space on rare occasions. The Great Wall is the longest wall in the world, with a length of 7,600 km."
+    },
+    {
+        "id":7,
+        "Country":"Brazil",
+        "Capital":"Brasilia",
+        "Population":"210.32 Million",
+        "Facts":"The Amazon Rainforest is home to the world's largest tropical rainforest, with an area of 7.5 million square kilometers."
+    },
+    {
+        "id":8,
+        "Country":"France",
+        "Capital":"Paris",
+        "Population":"66.94 Million",
+        "Facts":"The Eiffel Tower is the most visited tourist attraction in the world, with over 3.5 million visitors annually."
+    },
+    {
+        "id":9,
+        "Country":"Russia",
+        "Capital":"Moscow",
+        "Population":"145.56 Million",
+        "Facts":"Russia is the largest country in the world by area, covering more than 17 million square kilometers."
+    }
+]
