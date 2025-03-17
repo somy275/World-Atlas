@@ -28,9 +28,31 @@
 .group:hover .hidden {
   display: block;
 }
-.group:hover svg{
+.group:hover svg {
   display: none;
 }
-.rotate{
+.rotate {
   transform: rotate(180deg);
+}
+.text-tiny {
+  display: none;
+}
+button svg {
+  display: flex !important;
+}
+.profile{
+  display: flex;
+}
+.profile .text-tiny {
+  display: block !important;
+}
+.backdrop-blur-sm {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+.logout:hover svg{
+display: flex;
+}
+.profile svg{
+  display: block !important;
 }

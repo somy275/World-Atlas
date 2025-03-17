@@ -22,8 +22,10 @@ export const Profile = ({ setRegistered, navbarAnimation, navValue }) => {
                 <DropdownSection className="border-b-2 border-b-[#2a2a2bf0]" showDivider aria-label="Profile & Actions">
                     <DropdownItem className="hover:bg-[#2a2a2bf0] rounded-md" key="profile">
                         <User
+                            className="profile"
                             avatarProps={{
                                 size: "sm",
+                                className: "h-[2rem] w-[2rem] "
                             }}
                             classNames={{
                                 name: "text-default-600",
@@ -37,7 +39,7 @@ export const Profile = ({ setRegistered, navbarAnimation, navValue }) => {
                 {/* <DropdownItem className="hover:bg-[#2a2a2bf0] rounded-md" key="signup">
                     <NavLink className="" to="/loginSignup">Signup</NavLink>
                 </DropdownItem> */}
-                <DropdownItem className="hover:bg-red-500 text-red-500 hover:text-white rounded-md flex  items-center" key="logout" color="danger" onPress={handleRegistered} startContent={<IoIosLogOut />} >
+                <DropdownItem className="logout hover:bg-red-500 text-red-500 hover:text-white rounded-md flex  items-center" key="logout" color="danger" onPress={handleRegistered} startContent={<IoIosLogOut />} >
                     Log out
 
                 </DropdownItem>
