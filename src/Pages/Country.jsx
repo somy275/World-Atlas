@@ -87,7 +87,6 @@ export const Country = () => {
                             start: "center 95%",
                             end: "center 95%",
                             scrub: 1,
-                            markers: true
                         }
                     })
                 }
