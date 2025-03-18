@@ -6,18 +6,18 @@ export const CountryOuterLoader = () => {
     const loading = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     return (
         <>
-            <div className='h-auto w-screen  grid grid-cols-auto sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 place-items-center gap-y-[7rem] '>
+            <div className={`h-auto w-screen  grid grid-cols-auto sm:grid-cols-2 ${window.innerHeight > 750 && window.innerWidth < 1550 ? "lg:grid-cols-2" : "lg:grid-cols-3"} grid-rows-1 place-items-center gap-y-[7rem] `}>
                 {
                     loading.map((idx) => {
                         return (
                             <SkeletonTheme key={idx} baseColor='#414247' highlightColor='grey' duration={1.5} >
-                                <div className="h-auto w-[17rem] lg:w-[max(17rem,22vw)] lg:max-w-[550px] outline-2 outline-[#343435c1] rounded-[0.3rem] inset-shadow-[7px_7px_10px_-5px_#282829] shadow-[10px_10px_15px_-5px_#282829]">
+                                <div className="h-auto w-[17rem] lg:w-[max(27.1vw,37vh)] lg:max-w-[530px] lg:h-[max(34.4vw,48vh)] outline-2 outline-[#343435c1] rounded-[0.3rem] inset-shadow-[7px_7px_10px_-5px_#282829] shadow-[10px_10px_15px_-5px_#282829]">
                                     <div className="h-fit w-full relative">
-                                        <Skeleton className='w-[max(17rem,70vw)] min-[450px]:w-[max(18rem,52vw)] min-[450px]:max-w-[280px] md:w-[max(19rem,38vw)] md:max-w-[350px] lg:w-[max(19rem,25vw)] lg:max-w-[550px] h-[11rem]  rounded-tl-[0.3rem] rounded-tr-[0.3rem]' />
+                                        <Skeleton className='w-[max(17rem,70vw)] min-[450px]:w-[max(18rem,52vw)] min-[450px]:max-w-[280px] md:w-[max(19rem,38vw)] md:max-w-[350px] lg:w-[max(19rem,25vw)] lg:h-[max(17vw,22vh)] lg:max-w-[550px] h-[11rem]  rounded-tl-[0.3rem] rounded-tr-[0.3rem]' />
                                     </div>
                                     <div className="h-fit w-full px-[1rem]  pb-[1.7rem] pt-[1rem]">
                                         <div className=' w-[70%]'>
-                                            <Skeleton className='h-[1rem] w-auto mt-[2rem] mb-[0.7rem]' />
+                                            <Skeleton className='h-[1rem] lg:h-[max(1.523vw,1.5vh)] lg:max-h-[20px] w-auto mt-[2rem] mb-[0.7rem]' />
                                         </div>
                                         <div className='h-auto w-auto flex flex-col gap-[0.2rem] text-[1.2rem] '>
                                             <Skeleton className='h-[0.5rem] w-full' count={3} />

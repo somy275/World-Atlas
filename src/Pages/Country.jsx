@@ -105,14 +105,14 @@ export const Country = () => {
 
 
     return (
-        <section ref={ref} className={` w-screen grid grid-cols-auto sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 place-items-center gap-y-[7rem]   ${SearchData.length === 0 ? "h-[50vh]" : "h-auto"} `}>
+        <section ref={ref} className={` w-screen grid grid-cols-auto md:grid-cols-2 ${window.innerHeight > 750 && window.innerWidth < 1550 ? "lg:grid-cols-2" : "lg:grid-cols-3"} grid-rows-1 place-items-center gap-y-[7rem]   ${SearchData.length === 0 ? "h-[50vh]" : "h-auto"} `}>
             {
 
                 currentItems.map((item, idx) => {
                     return (
-                        <div className="h-auto w-fit lg:w-[max(19rem,25vw)] lg:max-w-[550px] outline-2 outline-[#343435c1] rounded-[0.3rem] inset-shadow-[7px_7px_10px_-5px_#282829] shadow-[10px_10px_15px_-5px_#282829]" key={idx}>
+                        <div className="h-auto w-fit lg:w-[max(27.1vw,38vh)] lg:max-w-[530px] outline-2 outline-[#343435c1] rounded-[0.3rem] inset-shadow-[7px_7px_10px_-5px_#282829] shadow-[10px_10px_15px_-5px_#282829]" key={idx}>
                             <div className="h-fit w-fit relative">
-                                <img loading="lazy" className="w-[max(17rem,70vw)] min-[450px]:w-[max(18rem,52vw)] min-[450px]:max-w-[310px] md:w-[max(19rem,38vw)] md:max-w-[350px] lg:w-[max(19rem,25vw)] lg:max-w-[550px] h-fit object-cover rounded-tl-[0.3rem] rounded-tr-[0.3rem] aspect-[2.5/1.5]" src={item.flags.svg} alt={item.name.common} />
+                                <img loading="lazy" className="w-[max(17rem,70vw)] min-[450px]:w-[max(65vw,32vh)] min-[450px]:max-w-[380px] md:w-[max(42vw,28vh)]  lg:w-[max(27.1vw,38vh)] lg:max-w-[530px] h-fit object-cover rounded-tl-[0.3rem] rounded-tr-[0.3rem] aspect-[2.5/1.5]" src={item.flags.svg} alt={item.name.common} />
                             </div>
                             <div className="h-fit w-full px-[1rem]  pb-[1.7rem] text-[#ffa600] pt-[1rem] ">
                                 <div className="pb-[0.8rem] text-[max(1.6rem,6.5vw)]  min-[450px]:text-[max(1.7rem,4.5vw)] md:text-[max(2.2rem,3.5vw)] lg:text-[max(clamp(1.0875rem,0.5727rem+1.4418vw,2.45rem),3.5vh)] font-[600]">{item.name.common.length > 13 ? item.name.common.slice(0, 13) + "..." : item.name.common}</div>
