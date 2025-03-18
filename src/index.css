@@ -47,7 +47,7 @@ button svg {
   display: block !important;
 }
 .backdrop-blur-sm {
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px) !important;
   -webkit-backdrop-filter: blur(15px);
 }
 .logout:hover svg {
