@@ -40,7 +40,7 @@
 button svg {
   display: flex !important;
 }
-.profile{
+.profile {
   display: flex;
 }
 .profile .text-tiny {
@@ -50,9 +50,9 @@ button svg {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 }
-.logout:hover svg{
-display: flex;
+.logout:hover svg {
+  display: flex;
 }
-.profile svg{
+.profile svg {
   display: block !important;
 }
