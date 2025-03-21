@@ -52,8 +52,8 @@ export const Header = ({ data, navValue }) => {
         </span>
 
 
-        <nav className={`lg:relative lg:bg-transparent lg:w-auto lg:flex lg:h-auto text-[max(clamp(1.375rem,1.0144rem+1.9231vw,1.9375rem),3.7vh)] lg:text-[19px] absolute bg-[#003f5c7b] backdrop-blur-4xl top-[100%] lg:top-0  right-0 h-screen justify-center transition-[width] duration-[1s] delay-200 ease-out ${navValue ? "w-0" : "flex w-[100%] "}`} >
-          <span className="lg:flex-row lg:justify-around lg:w-[30rem] w-full  flex gap-[max(1.2rem,3.5vh)] items-center  lg:items-center flex-col pt-[5rem] lg:pt-0">
+        <nav className={`lg:relative  lg:bg-transparent lg:w-auto lg:flex lg:h-auto text-[max(clamp(1.375rem,1.0144rem+1.9231vw,1.9375rem),3.7vh)] lg:text-[19px] absolute bg-[#003f5c7b] backdrop-blur-4xl top-[100%] lg:top-0  right-0 h-screen justify-center transition-[width] duration-[1s] delay-200 ease-out ${navValue ? "w-0" : "flex w-[100%] "}`} >
+          <span className="lg:flex-row lg:justify-around lg:w-[max(40vw,55vh)] w-full   flex gap-[max(1.2rem,3.5vh)] items-center  lg:items-center flex-col pt-[5rem] lg:pt-0">
             <span className={navbar}>
               <NavLink to="/" className={`${navbarAnimation} ${navValue ? "translate-y-[100%]" : " translate-y-[0%]"} `} style={({ isActive }) => { return { color: isActive ? "#ffd380" : "" } }}>Home</NavLink>
             </span>
@@ -67,7 +67,7 @@ export const Header = ({ data, navValue }) => {
               <NavLink to="/contact" className={`${navbarAnimation} ${navValue ? "translate-y-[100%]" : " translate-y-[0%]"}`} style={({ isActive }) => { return { color: isActive ? "#ffd380" : "" } }}>Contact</NavLink>
             </span>
             {
-              Registered ? <span className="relative h-[max(7vw,5vh)] min-[450px]:h-[max(6vw,5.7vh)] md:h-[max(4.7vw,4vh)] min-h-[30px] overflow-hidden w-full  lg:w-auto lg:h-fit"> <Profile navbarAnimation={navbarAnimation} navValue={navValue} setRegistered={setRegistered} /></span> : <span className={`relative text-center h-[max(10vw,6vh)] min-[450px]:h-[max(6vw,6vh)] md:h-[max(6vw,6vh)] min-h-[30px] w-[40%] min-[450px]:w-[33%] md:w-[20%] lg:w-auto lg:h-auto lg:px-[0.6rem] cursor-pointer inline-block overflow-hidden bg-[#FFD380]  rounded-full text-[#003F5C] font-semibold drop-shadow-[-1px_-1px_7px_#000] active:scale-[0.8] active:text-[#CC6A27] active:transition-transform active:duration-[350ms] active:ease-out `}><span className={` lg:text-[max(clamp(1.0625rem,0.0789rem+1.5369vw,2rem),2.6vh)]  ${navValue ? "translate-y-[100%]" : " translate-y-[0%]"}`} onClick={handleUserExists}>Sign in</span></span>
+              Registered ? <span className="relative h-[max(7vw,5vh)] min-[450px]:h-[max(6vw,5.7vh)] md:h-[max(4.7vw,4vh)] min-h-[30px] overflow-hidden w-full  lg:w-auto lg:h-fit"> <Profile navbarAnimation={navbarAnimation} navValue={navValue} setRegistered={setRegistered} /></span> : <span className={`relative text-center h-[max(10vw,6vh)] min-[450px]:h-[max(6vw,6vh)] md:h-[max(6vw,6vh)] min-h-[30px] w-[40%] min-[450px]:w-[33%] md:w-[20%] lg:w-auto lg:h-auto lg:px-[0.6rem] cursor-pointer inline-block overflow-hidden bg-[#FFD380]  rounded-full text-[#003F5C] font-semibold drop-shadow-[-1px_-1px_7px_#000] active:scale-[0.8] active:text-[#CC6A27] active:transition-transform active:duration-[350ms] active:ease-out `}><span className={` lg:text-[max(clamp(1.0625rem,0.0789rem+1.5369vw,2rem),2.2vh)]  ${navValue ? "translate-y-[100%]" : " translate-y-[0%]"}`} onClick={handleUserExists}>Sign in</span></span>
             }
           </span>
         </nav>

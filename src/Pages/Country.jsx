@@ -114,7 +114,7 @@ export const Country = () => {
                             <div className="h-fit w-fit relative">
                                 <img loading="lazy" className="w-[max(17rem,70vw)] min-[450px]:w-[max(65vw,32vh)] min-[450px]:max-w-[380px] md:w-[max(42vw,28vh)]  lg:w-[max(27.1vw,38vh)] lg:max-w-[530px] h-fit object-cover rounded-tl-[0.3rem] rounded-tr-[0.3rem] aspect-[2.5/1.5]" src={item.flags.svg} alt={item.name.common} />
                             </div>
-                            <div className="h-fit w-full px-[1rem]  pb-[1.7rem] text-[#ffa600] pt-[1rem] ">
+                            <div className="h-fit w-full pl-[1rem]  pb-[1.7rem] text-[#ffa600] pt-[1rem] ">
                                 <div className="pb-[0.8rem] text-[max(1.6rem,6.5vw)]  min-[450px]:text-[max(1.7rem,4.5vw)] md:text-[max(2.2rem,3.5vw)] lg:text-[max(clamp(1.0875rem,0.5727rem+1.4418vw,2.45rem),3.5vh)] font-[600]">{item.name.common.length > 13 ? item.name.common.slice(0, 13) + "..." : item.name.common}</div>
                                 <div className="h-auto w-auto flex flex-col gap-[0.2rem] text-[1.2rem] min-[450px]:text-[max(clamp(1.120rem,0.7710rem+1.1577vw,1.360rem),2vh)] lg:text-[max(clamp(1rem,0.2787rem+1.027vw,1.6875rem),2.7vh)] ">
                                     <div className=" text-[#FFD380]">Population: <span className="text-[#FFD380]">{<ConvertNumber num={item.population} />}</span></div>
@@ -122,7 +122,7 @@ export const Country = () => {
                                     <div className=" text-[#FFD380]">Capital: <span className="text-[#FFD380]">{item.capital}</span></div>
                                 </div>
                                 <NavLink to={`/country/${item.name.common}`} className="flex w-fit mx-auto mt-[1.3rem]">
-                                    <button type="button" className="text-[0.8rem] min-[450px]:text-[max(clamp(0.9375rem,0.5837rem+1.2579vw,1.1875rem),1.7vh)] lg:text-[max(clamp(0.8125rem,0.2223rem+0.9221vw,1.375rem),2.2vh)] font-[600] mx-auto outline-1 outline-[#FFD380] text-[#ffa600] px-[1.5rem] py-[0.3rem] rounded-4xl cursor-pointer">Read More</button>
+                                    <button type="button" className="text-[0.8rem] min-[450px]:text-[max(clamp(0.9375rem,0.5837rem+1.2579vw,1.1875rem),1.7vh)] lg:text-[max(clamp(0.8125rem,0.2223rem+0.9221vw,1.375rem),2.2vh)] font-[600] mx-auto outline-1 outline-[#FFD380] text-[#ffa600] px-[1.5rem] py-[0.3rem] rounded-4xl cursor-pointer relative z-50 overflow-hidden before:z-[-1]  before:bg-[#003F5C] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:origin-top before:scale-y-0 before:transition-transform before:duration-350 hover:before:origin-bottom hover:before:scale-y-100">Read More</button>
                                 </NavLink>
                             </div>
                         </div>
