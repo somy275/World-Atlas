@@ -14,7 +14,7 @@ export const Profile = ({ setRegistered, navbarAnimation, navValue }) => {
         <Dropdown
             radius="sm" backdrop="blur" >
             <DropdownTrigger className="cursor-pointer ">
-                <Button className="w-full h-full lg:flex" disableRipple variant="ghost">
+                <Button className="w-full h-full flex" disableRipple variant="ghost">
                     <FaUserCircle className={`mx-auto text-[max(8vw,4vh)] max-w-[3rem!important] lg:mx-0 md:text-[max(4.8vw,4vh)] lg:text-[max(clamp(1.6875rem,0.7727rem+1.4418vw,2.75rem),3.8vh)] ${navbarAnimation} ${navValue ? "translate-y-[100%] lg:translate-y-[0]" : " translate-y-[0%]"}`} />
                 </Button>
             </DropdownTrigger >
