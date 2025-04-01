@@ -5,5 +5,5 @@ const api = axios.create(
     }
 );
 export const getData = (data) => {
-    return api.get(`${data}`);
+    return api.get(`${data}`); //get data from api
 }

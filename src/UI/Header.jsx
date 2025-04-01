@@ -3,37 +3,34 @@ import { NavLink } from "react-router";
 import { CiMenuFries } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { useLenis } from "lenis/react";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Profile } from "./Profile";
-// import { useCustomContext } from "./Context";
 import { LoginSignup } from "./LoginSignup";
-export const Header = ({ data, navValue }) => {
+const Header = ({ data, navValue }) => {
   const [Nav, setNav] = useState();
   const [Registered, setRegistered] = useState(false);
   const [UserExist, setUserExist] = useState(false);
   useEffect(() => {
-    if (localStorage.getItem("UserExists") == "true") {
-      console.log("User exists");
+    if (localStorage.getItem("UserExists") == "true") { //if the user exists then set the user exist state to true
       setUserExist(true);
-    } else if (localStorage.getItem("UserExists") == "false") {
-      console.log("User not exists");
+    } else if (localStorage.getItem("UserExists") == "false") { //if the user not exists then set the user exist state to false
       setUserExist(false);
     }
-    if (localStorage.getItem("Registered") == "true") {
+    if (localStorage.getItem("Registered") == "true") { //if the user is already registered then set the registered state to true
       setRegistered(true);
-    } else if (localStorage.getItem("Registered") == "false") {
+    } else if (localStorage.getItem("Registered") == "false") { //if the user is not registered then set the registered state to false
       setRegistered(false);
     }
   }, []);
-  let handleUserExists = () => {
+  let handleUserExists = () => { //when the user clicks on the login button then this function is executed
     localStorage.setItem("UserExists", !UserExist);
     setUserExist(!UserExist);
   };
 
-  useLenis((e) => {
+  useLenis((e) => { //for smooth scrolling
     // called every scroll
     let { direction } = e;
-    setNav(direction);
+    setNav(direction); //set the direction of the scroll
   });
 
   const navbarAnimation =
@@ -64,7 +61,7 @@ export const Header = ({ data, navValue }) => {
             }`}
         >
           <span
-            onClick={data}
+            onClick={window.innerWidth < 1024 && data}
             className="lg:flex-row lg:justify-around lg:w-[max(40vw,55vh)] w-full   flex gap-[max(1.2rem,3.5vh)] items-center  lg:items-center flex-col pt-[5rem] lg:pt-0"
           >
             <span className={navbar}>
@@ -92,16 +89,19 @@ export const Header = ({ data, navValue }) => {
               </NavLink>
             </span>
             <span className={navbar}>
-              <NavLink
-                to="/country"
-                className={`${navbarAnimation} ${navValue ? "translate-y-[100%]" : " translate-y-[0%]"
-                  }`}
-                style={({ isActive }) => {
-                  return { color: isActive ? "#ffd380" : "" };
-                }}
-              >
-                Country
-              </NavLink>
+              {Registered ?
+                <NavLink
+                  to={"/country"}
+                  className={`${navbarAnimation} ${navValue ? "translate-y-[100%]" : " translate-y-[0%]"
+                    }`}
+                  style={({ isActive }) => {
+                    return { color: isActive ? "#ffd380" : "" };
+                  }}
+                >
+                  Country
+                </NavLink> : <span onClick={() => setUserExist(true)} className={`${navbarAnimation} cursor-pointer ${navValue ? "translate-y-[100%]" : " translate-y-[0%]"
+                  }`}>Country</span>
+              }
             </span>
             <span className={navbar}>
               <NavLink
@@ -133,7 +133,6 @@ export const Header = ({ data, navValue }) => {
                     }`}
                   onClick={handleUserExists}
                 >
-                  {/* relative flex mx-auto justify-center text-center h-[max(10vw,6vh)] min-[450px]:h-[max(6vw,6vh)] md:h-[max(6vw,6vh)] min-h-[30px] w-[35%] min-[450px]:w-[max(30vw,18vh)] min-[450px]:max-w-[190px] md:w-[max(18vw,16vh)] md:max-w-none lg:w-auto lg:h-auto lg:px-[0.6rem] cursor-pointer bg-[#FFD380]  rounded-full text-[#003F5C] font-semibold  active:scale-[0.8] active:text-[#CC6A27] active:transition-transform active:duration-[350ms] active:ease-out lg:text-[max(clamp(1.0625rem,0.0789rem+1.5369vw,2rem),2.2vh)] lg:translate-y-0 transition-[width] duration-[650ms]  ease-in-out  */}
                   Sign in
                 </span>
               </span>
@@ -152,3 +151,4 @@ export const Header = ({ data, navValue }) => {
     </>
   );
 };
+export default memo(Header);

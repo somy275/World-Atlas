@@ -12,7 +12,6 @@ export const CountryDetails = () => {
     const [ispending, startTransition] = useTransition();//Check data is pending or not
     const [GetCountryDetails, setGetCountryDetails] = useState([]) //Store the api data
     const [DataComing, setDataComing] = useState(false) //To check the data is coming or not using UseState
-
     useEffect(() => { //This hook runs when the state changes
         setDataComing(false) //When the component mounts, set DataComing to false
         startTransition(async () => {

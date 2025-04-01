@@ -4,7 +4,7 @@ import { IoIosLogOut } from "react-icons/io";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, DropdownSection, User } from "@heroui/react";
 
 export const Profile = ({ setRegistered, navbarAnimation, navValue }) => {
-    let handleRegistered = () => {
+    let handleRegistered = () => { //when the user logout then remove the user data from the localStorage and setRegistered state to false
         localStorage.removeItem("LoginUserEmail");
         localStorage.removeItem("LoginUserPassword");
         localStorage.setItem("Registered", false);
@@ -36,12 +36,8 @@ export const Profile = ({ setRegistered, navbarAnimation, navValue }) => {
 
                     </DropdownItem>
                 </DropdownSection>
-                {/* <DropdownItem className="hover:bg-[#2a2a2bf0] rounded-md" key="signup">
-                    <NavLink className="" to="/loginSignup">Signup</NavLink>
-                </DropdownItem> */}
                 <DropdownItem className="logout hover:bg-red-500 text-red-500 hover:text-white rounded-md flex  items-center" key="logout" color="danger" onPress={handleRegistered} startContent={<IoIosLogOut />} >
                     Log out
-
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>

@@ -3,7 +3,7 @@ import ErrorPage404 from "../assets/ErrorPage404.webp"
 export const PageError = () => {
     const errors = useRouteError();
     const location = useLocation();
-
+    // if the page is not available, then page not found image is displayed
     if (errors.status === 404 || location.key == "default") {
         return (
             <div className='h-screen w-screen flex flex-col items-center justify-around '>

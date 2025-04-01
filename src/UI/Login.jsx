@@ -7,19 +7,19 @@ export const Login = ({ Profile, setProfile, setUserLogin }) => {
     const { register, handleSubmit, formState } = useForm();
     const { errors } = formState;
     const loginForm = useRef()
-    let onLogin = (e) => {
-        if (localStorage.getItem("UserEmail") != e.loginemail) {
-            notifyOnError("User does not exist")
+    let onLogin = (e) => { //When user login form is submitted then this function is executed
+        if (localStorage.getItem("UserEmail") != e.loginemail) { //When the user email does not match or exist then this condition is executed
+            notifyOnError("User does not exist") //When the user email does not match or exist then notifyOnError is called
         }
-        else if (localStorage.getItem("UserPassword") != e.loginpswd) {
-            notifyOnError("Please enter correct password")
+        else if (localStorage.getItem("UserPassword") != e.loginpswd) { //When the user password does not match then this condition is executed
+            notifyOnError("Please enter correct password") //When the user password does not match then notifyOnError is called
         }
         else {
-            loginForm.current.reset();
-            notifyOnSuccess("You are Login successfully")
-            localStorage.setItem("LoginUserEmail", e.loginemail)
-            localStorage.setItem("LoginUserPassword", e.loginpswd)
-            setUserLogin(true)
+            loginForm.current.reset(); //When the user successfully login then cleared the login form
+            notifyOnSuccess("You are Login successfully") //When the user successfully login then notifyOnSuccess is called
+            localStorage.setItem("LoginUserEmail", e.loginemail) //When the user successfully login then user login email set in local storage
+            localStorage.setItem("LoginUserPassword", e.loginpswd) //When the user successfully login then user login password set in local storage
+            setUserLogin(true) //When the user successfully login then user login state set to true
         }
     }
     return (

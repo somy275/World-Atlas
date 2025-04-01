@@ -12,25 +12,25 @@ export const UserEnterOtp = ({ setOTP, setUserOTP, setOTPSend }) => {
     const [Timer, setTimer] = useState(59)
     const { register, handleSubmit, formState: { errors } } = useForm()
     const form = useRef()
-    let onSubmit = (e) => {
-        setUserOTP(e.otp);
+    let onSubmit = (e) => { //when the form is submitted then this function is executed
+        setUserOTP(e.otp); // set the user entered otp
     }
-    let handleResendOtp = () => {
+    let handleResendOtp = () => { //when the resend otp button is clicked then this function is executed
         notifyOnSuccess("OTP has been resend successfully")
-        setOTP(OtpGenerator())
-        form.current.reset();
-        setUserOTP()
-        setTimer(59)
+        setOTP(OtpGenerator()) // set the otp
+        form.current.reset(); //when the user resends the otp then the form is reset
+        setUserOTP() // clear the user entered otp
+        setTimer(59) // set the timer
     }
     useEffect(() => {
         if (Timer > 0) {
             const TimerEnd = setInterval(() => {
-                setTimer(prevSeconds => prevSeconds - 1)
+                setTimer(prevSeconds => prevSeconds - 1) // reset timer
             }, 1000);
             return () => clearInterval(TimerEnd)
         }
         else {
-            setOTP()
+            setOTP() //clear the stored previous otp
         }
     }, [Timer])
     return (

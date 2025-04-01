@@ -9,43 +9,43 @@ export const FindCountryData = ({ children }) => {
     const [SearchInputData, setSearchInputData] = useState("");
     const [FilterData, setFilterData] = useState("all")
     const [AscDesc, setAscDesc] = useState("")
-    const ref1 = useRef(); //To get the reference of the parent od the asc and desc
+    const ref1 = useRef(); //To get the reference of the parent for asc and desc
 
     let handleSearchInput = (e) => {
-        setSearchInputData(e.target.value.toLowerCase());
+        setSearchInputData(e.target.value.toLowerCase()); //set the user search input
     }
-    useEffect(() => {
-        if (localStorage.getItem("FilterData") === null) {
+    useEffect(() => { // this hook runs only when AscDesc state is changed
+        if (localStorage.getItem("FilterData") === null) { //if the filter data is not set then set it to all
             setFilterData("all")
         }
         else {
-            setFilterData(localStorage.getItem("FilterData"))
+            setFilterData(localStorage.getItem("FilterData")) //set the filter data
         }
         let sortData = localStorage.getItem("SortData");
-        setAscDesc(sortData);
-        if (localStorage.getItem("SortData") == "Ascending") {
+        setAscDesc(sortData); // set the sort data
+        if (localStorage.getItem("SortData") == "Ascending") { //if the sort data is ascending then set the background color of the ascending button 
             ref1.current.children[0].style.backgroundColor = "#27272A"
             ref1.current.children[1].style.backgroundColor = "transparent"
         }
-        else {
+        else { //if the sort data is descending then set the background color of the descending button
             ref1.current.children[1].style.backgroundColor = "#27272A"
             ref1.current.children[0].style.backgroundColor = "transparent"
         }
 
     }, [AscDesc])
 
-    let handleFilterData = (filter) => {
-        localStorage.setItem("FilterData", filter)
-        setFilterData(filter)
+    let handleFilterData = (filter) => { // when the user clicks on the filter button then this function is executed
+        localStorage.setItem("FilterData", filter) // set the filter data in the localStorage
+        setFilterData(filter) // set the filter data
     }
-    let handleSortAscending = () => {
-        localStorage.setItem("SortData", "Ascending")
-        setAscDesc("Ascending")
+    let handleSortAscending = () => { // when the user clicks on the ascending button then this function is executed
+        localStorage.setItem("SortData", "Ascending") // set ascending in the localStorage
+        setAscDesc("Ascending") // set the sort data
 
     }
-    let handleSortDescending = () => {
-        localStorage.setItem("SortData", "Descending")
-        setAscDesc("Descending")
+    let handleSortDescending = () => { // when the user clicks on the descending button then this function is executed
+        localStorage.setItem("SortData", "Descending") // set descending in the localStorage
+        setAscDesc("Descending") // set the sort data
 
     }
 

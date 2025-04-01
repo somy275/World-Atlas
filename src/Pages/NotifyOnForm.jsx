@@ -1,6 +1,5 @@
 import { Bounce, toast } from 'react-toastify';
 export const notifyOnError = (msg) => {
-    console.log("ok");
     
     toast.error(msg, {
         position: "top-right",

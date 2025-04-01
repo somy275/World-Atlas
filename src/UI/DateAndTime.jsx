@@ -1,6 +1,5 @@
 const DateAndTime = ({ date, setDataComing }) => {
-    console.log("chAL");
-
+    // Get the current date
     let dateInUTCPlusOne = new Date();
     dateInUTCPlusOne.setHours(dateInUTCPlusOne.getUTCHours() + date);
 

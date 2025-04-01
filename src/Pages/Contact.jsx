@@ -13,23 +13,22 @@ export const Contact = () => {
     const form = useRef();
     //Send message when form is submited   
     const sendEmail = () => {
-        button.current.innerHTML = "Sending...";
-        button.current.disabled = true;
+        button.current.innerHTML = "Sending...";//shows sending until the form is successfully sent
+        button.current.disabled = true;//Send button is disabled until the form is successfully sent
         emailjs
             .sendForm('service_ee96nwn', 'template_bekk9ve', form.current, {
                 publicKey: 'zU5MC4AjhJkakciY3',
             })
             .then(
                 () => {
-                    button.current.innerHTML = "Send";
-                    button.current.disabled = false;
-                    console.log('SUCCESS!');
-                    form.current.reset()
-                    notifyOnSuccess("Message has been sent Successfully");
+                    button.current.innerHTML = "Send";// shows send when the form is successfully sent
+                    button.current.disabled = false;//Send button is enabled when the form is successfully sent
+                    form.current.reset()//When the form is successfully sent, the form is reset
+                    notifyOnSuccess("Message has been sent Successfully"); //this function will be called when the message has been sent successfully
 
                 },
                 (error) => {
-                    notifyOnError("Message has been sent Error:" + error.message)
+                    notifyOnError("Message has been sent Error:" + error.message)//this function will be called when the message has not been sent successfully
                 },
             );
 
@@ -44,15 +43,15 @@ export const Contact = () => {
                     pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
                 })}></input>
                 {errors.email && errors.email.type === "required" && (
-                    notifyOnError("Email is required")
+                    notifyOnError("Email is required") // when the user try to sent the form without entering the email address this function will be called
                 )}
                 {errors.email && errors.email.type === "pattern" && (
-                    notifyOnError("Email is not valid")
+                    notifyOnError("Email is not valid")//when the email is not valid this function will be called
                 )}
                 <input name='from_phone' className={formAnimated} type="tel" placeholder="Enter your mobile no." ></input>
                 <textarea className={formAnimated} name="message" cols="30" rows="10" placeholder="Enter your message" {...register("message", { required: true })}></textarea>
                 {errors.message && errors.message.type === "required" && (
-                    notifyOnError("Message is required")
+                    notifyOnError("Message is required") // when the user try to sent the message without any message then this function will be called
                 )}
                 <button ref={button} type="submit" className="bg-[#ff8531] rounded-2xl py-2 px-[3rem] text-white font-bold w-fit mx-auto cursor-pointer active:scale-[0.85] active:text-black active:transition-transform active:duration-[200ms] text-[max(clamp(1rem,0.8308rem+0.8734vw,1.25rem),2.2vh)] md:text-[max(clamp(1.25rem,0.125rem+2.3438vw,1.625rem),2.3vh)] lg:text-[max(clamp(1.0375rem,0.5441rem+0.6148vw,1.3125rem),2.3vh)]">
                     Send</button>

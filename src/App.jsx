@@ -10,6 +10,7 @@ import { FindCountryData } from './UI/FindCountryData'
 import { ReactLenis } from 'lenis/react'
 import { PasswordModify } from './UI/PasswordModify'
 const App = () => {
+
   const router = createBrowserRouter(
     [
       {

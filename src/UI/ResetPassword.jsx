@@ -9,11 +9,11 @@ export const ResetPassword = ({ setOTPSend, setOTP }) => {
     const { register, handleSubmit, formState } = useForm();
     const { errors } = formState;
     const reset = useRef()
-    let onReset = (e) => {
-        if (localStorage.getItem("UserEmail") != e.ResetEmail || localStorage.getItem("UserEmail") == null) {
+    let onReset = (e) => { //When the form is submitted for reset password then this function is executed
+        if (localStorage.getItem("UserEmail") != e.ResetEmail || localStorage.getItem("UserEmail") == null) { //If the user email does not match or does not exist then this condition is executed
             notifyOnError("User does not exist")
         }
-        else {
+        else {   //If the user email matches then user password is reset
             reset.current.reset();
             notifyOnSuccess("4-digit OTP has been sent in your email address")
             setOTP(OtpGenerator())

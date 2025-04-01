@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import world from "../assets/world.png";
+import world from "../assets/world.webp";
 import { FaArrowRightLong } from "react-icons/fa6";
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
@@ -44,7 +44,7 @@ export const Home = () => {
                 </NavLink>
             </span>
             <span className="">
-                <img src={world} alt="world" />
+                <img loading="eager" src={world} alt="world" />
             </span>
         </section>
     )

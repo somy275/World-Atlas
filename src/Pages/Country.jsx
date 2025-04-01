@@ -6,7 +6,7 @@ import { useTransition } from "react"
 import { ConvertNumber } from "../UI/ConvertNumber"
 import { NavLink } from "react-router"
 import { useCustomContext } from "../UI/Context"
-import { CountryPagination } from "../UI/CountryPagination"
+import CountryPagination from "../UI/CountryPagination"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
@@ -81,7 +81,7 @@ export const Country = () => {
                         ease: "circ.inOut",
                         duration: 1.3,
                         scrollBehavior: "smooth",
-                        stagger: 0.4,
+                        stagger: 0.2,
                         scrollTrigger: {
                             trigger: ref.current.children[idx],
                             start: "center 95%",
@@ -107,7 +107,7 @@ export const Country = () => {
     return (
         <section ref={ref} className={` w-screen grid grid-cols-auto md:grid-cols-2 ${window.innerHeight > 750 && window.innerWidth < 1550 ? "lg:grid-cols-2" : "lg:grid-cols-3"} grid-rows-1 place-items-center gap-y-[7rem]   ${SearchData.length === 0 ? "h-[50vh]" : "h-auto"} `}>
             {
-
+                // Show country cards
                 currentItems.map((item, idx) => {
                     return (
                         <div className="h-auto w-fit lg:w-[max(27.1vw,38vh)] lg:max-w-[530px] outline-2 outline-[#343435c1] rounded-[0.3rem] inset-shadow-[7px_7px_10px_-5px_#282829] shadow-[10px_10px_15px_-5px_#282829]" key={idx}>
@@ -129,10 +129,12 @@ export const Country = () => {
                     )
                 })
             }
-            {SearchData.length === 0 && <h3 className="absolute top-[50%] text-[max(1.6rem,6.5vw)]  min-[450px]:text-[max(1.7rem,4.5vw)] md:text-[max(2.2rem,3.5vw)] lg:text-[max(clamp(1.5625rem,0.71rem+1.132vw,2.375rem),3.5vh)] font-bold mx-auto text-[#FFD380] ">No result found</h3>}
-            {SearchData.length != 0 && <div className=" text-amber-400 absolute bottom-[-1rem] left-[50%] translate-x-[-50%] py-[4rem]">
-                <CountryPagination totalPages={totalPages} setCurrentPage={setCurrentPage} />
-            </div>}
+            {// when the user search input does not math with the country name then no result found shown
+                SearchData.length === 0 && <h3 className="absolute top-[50%] text-[max(1.6rem,6.5vw)]  min-[450px]:text-[max(1.7rem,4.5vw)] md:text-[max(2.2rem,3.5vw)] lg:text-[max(clamp(1.5625rem,0.71rem+1.132vw,2.375rem),3.5vh)] font-bold mx-auto text-[#FFD380] ">No result found</h3>}
+            {//When the user input does not match with the country name, then pagination will be disabled
+                SearchData.length != 0 && <div className=" text-amber-400 absolute bottom-[-1rem] left-[50%] translate-x-[-50%] py-[4rem]">
+                    <CountryPagination totalPages={totalPages} setCurrentPage={setCurrentPage} />
+                </div>}
         </section >
     )
 }

@@ -1,21 +1,21 @@
 import { Outlet } from "react-router"
-import { Header } from "./Header"
-import  Footer  from "./Footer"
+import Header from "./Header"
+import Footer from "./Footer"
 import { useState } from "react";
 import offline from "../assets/offline.png"
 export const Applayout = () => {
   const [Value, setValue] = useState(true);
   const [onlineOffline, setonlineOffline] = useState(false)
   window.onoffline = () => {
-    setonlineOffline(true);
+    setonlineOffline(true);  //When the user is offline then setonlineOffline state to true
 
   }
   window.ononline = () => {
-    setonlineOffline(false);
+    setonlineOffline(false); //When the user is online then setonlineOffline state to false
 
   }
 
-  if (onlineOffline || !window.navigator.onLine) {
+  if (onlineOffline || !window.navigator.onLine) { //When the user is offline then this condition is executed and shows the offline page
 
     return (
       <div className=" h-screen w-screen flex items-center justify-center flex-col">
@@ -32,7 +32,6 @@ export const Applayout = () => {
     <main className={`w-screen h-fit  text-[black]  ${Value ? "relative" : "fixed"}`}>
 
       <Header data={() => setValue(!Value)} navValue={Value} />
-
       <Outlet />
       <Footer />
     </main>
