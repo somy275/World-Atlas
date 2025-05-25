@@ -49,7 +49,6 @@ const App = () => {
   return (
     <>
       <ReactLenis root>
-
         <RouterProvider router={router}></RouterProvider>
 
       </ReactLenis>

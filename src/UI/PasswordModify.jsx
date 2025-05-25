@@ -6,7 +6,7 @@ import { notifyOnError, notifyOnSuccess } from '../Pages/NotifyOnForm'
 import { ToastContainer } from "react-toastify";
 
 export const PasswordModify = () => {
-    const [OTPSend, setOTPSend] = useState(false)
+    const [OTPSend, setOTPSend] = useState(true)
     const [OTPSuccess, setOTPSuccess] = useState(false)
     const [OTP, setOTP] = useState()
     const [UserOTP, setUserOTP] = useState()
@@ -96,9 +96,8 @@ export const PasswordModify = () => {
                 </div>
                     //If the OTPSucceess is false, then this condition is executed immediately
                     //When the condition is executed, another condition is executed
-                    : !OTPSend ? <ResetPassword setOTPSend={setOTPSend} setOTP={setOTP} /> : <UserEnterOtp setOTP={setOTP} setOTPSend={setOTPSend} setUserOTP={setUserOTP} />
+                    : OTPSend ? <ResetPassword setOTPSend={setOTPSend} setOTP={setOTP} /> : <UserEnterOtp setOTP={setOTP} setOTPSend={setOTPSend} setUserOTP={setUserOTP} />
             }
-
         </>
     )
 }

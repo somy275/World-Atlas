@@ -15,7 +15,7 @@ export const Applayout = () => {
 
   }
 
-  if (onlineOffline || !window.navigator.onLine) { //When the user is offline then this condition is executed and shows the offline page
+  if (onlineOffline && !window.navigator.onLine) { //When the user is offline then this condition is executed and shows the offline page
 
     return (
       <div className=" h-screen w-screen flex items-center justify-center flex-col">

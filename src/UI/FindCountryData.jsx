@@ -14,13 +14,16 @@ export const FindCountryData = ({ children }) => {
     let handleSearchInput = (e) => {
         setSearchInputData(e.target.value.toLowerCase()); //set the user search input
     }
-    useEffect(() => { // this hook runs only when AscDesc state is changed
+    useEffect(() => { //this hooks runs first time when user reload the website
         if (localStorage.getItem("FilterData") === null) { //if the filter data is not set then set it to all
             setFilterData("all")
         }
         else {
             setFilterData(localStorage.getItem("FilterData")) //set the filter data
         }
+    }, [])
+    
+    useEffect(() => { // this hook runs only when AscDesc state is changed
         let sortData = localStorage.getItem("SortData");
         setAscDesc(sortData); // set the sort data
         if (localStorage.getItem("SortData") == "Ascending") { //if the sort data is ascending then set the background color of the ascending button 

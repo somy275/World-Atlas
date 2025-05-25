@@ -23,7 +23,6 @@ export const About = () => {
                     start: "top 50%",
                     end: "top 50%",
                     scrub: 1,
-                    
                 },
             });
         })

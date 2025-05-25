@@ -18,7 +18,7 @@ export const ResetPassword = ({ setOTPSend, setOTP }) => {
             notifyOnSuccess("4-digit OTP has been sent in your email address")
             setOTP(OtpGenerator())
             setTimeout(() => {
-                setOTPSend(true);
+                setOTPSend(false);
             }, 1400)
         }
     }

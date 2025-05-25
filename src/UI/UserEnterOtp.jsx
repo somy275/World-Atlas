@@ -35,7 +35,7 @@ export const UserEnterOtp = ({ setOTP, setUserOTP, setOTPSend }) => {
     }, [Timer])
     return (
         <>
-            <IoIosArrowRoundBack title="Back" className="absolute z-10 top-[6%] md:top-[12%] left-[3%] text-[clamp(3.4375rem,3.049rem+2.0718vw,4.375rem)] lg:text-[clamp(3.4375rem,2.7818rem+1.0246vw,4.0625rem)] text-[#FFD380] cursor-pointer" onClick={() => setOTPSend(false)} />
+            <IoIosArrowRoundBack title="Back" className="absolute z-10 top-[6%] md:top-[12%] left-[3%] text-[clamp(3.4375rem,3.049rem+2.0718vw,4.375rem)] lg:text-[clamp(3.4375rem,2.7818rem+1.0246vw,4.0625rem)] text-[#FFD380] cursor-pointer" onClick={() => setOTPSend(true)} />
             <div className="relative h-screen w-screen  flex items-center justify-center text-white ">
                 <form ref={form} onSubmit={handleSubmit(onSubmit)} className="bg-[#003f5cc7] mt-[3.5rem] h-[50%] w-[80%] min-h-[350px] max-h-[400px] min-[450px]:max-h-[500px] min-[450px]:max-w-[430px] min-[450px]:min-h-[400px] lg:h-[67%] lg:w-[max(28%,50vh)] lg:min-h-[380px] lg:max-h-[700px] lg:max-w-[600px] rounded-md flex flex-col justify-between py-[3rem]  items-center ">
                     <span className="text-center ">

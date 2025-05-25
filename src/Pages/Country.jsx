@@ -97,7 +97,7 @@ export const Country = () => {
 
 
 
-    if (ispending || currentItems.length === 0) {                 //If the data is pending then loading component will show a loading
+    if (ispending || currentItems.length === 0 && SearchInputData == "") {                 //If the data is pending then loading component will show a loading
         return (
             <CountryOuterLoader />  //call the loading component to show the loading
         )

@@ -12,11 +12,11 @@ export const LoginSignup = ({ children, setRegistered, setUserExist }) => {
     const [UserLogin, setUserLogin] = useState(false)
     const { errors } = formState;
     const signForm = useRef()
-    let onSignin = (e) => {
-        if (localStorage.getItem("UserEmail") == e.email) {
+    let onSignin = (e) => { //when the user signin then this function is executed
+        if (localStorage.getItem("UserEmail") == e.email) { //if the user is already exists then notify to user, you are already exist
             notifyOnError("User already exists")
         }
-        else {
+        else { //if the user is'nt exist already then user successfully signin and notify to user, You have successfully registered
             notifyOnSuccess("You have successfully registered")
             localStorage.setItem("UserEmail", e.email)
             localStorage.setItem("UserName", e.username)
@@ -33,17 +33,17 @@ export const LoginSignup = ({ children, setRegistered, setUserExist }) => {
             setUserExist(false)
             localStorage.setItem("UserExists", false);
         }
-        else if (UserLogin) {
+        else if (UserLogin) { //when the user login successfuly the signin & login page closes and shown the user profile
             setTimeout(() => {
                 localStorage.setItem("UserExists", false);
                 localStorage.setItem("Registered", true);
                 setUserExist(false);
-                setRegistered(true)
+                setRegistered(true);
             }, 2000);
         }
     }, [UserLogin, setRegistered, setUserExist]);
-    let handleSignin = () => {
-        setUserExist(false)
+    let handleSignin = () => { //when the user clicks the close button this function is excuted
+        setUserExist(false) //Close the signin & login page
         localStorage.setItem("UserExists", false);
     }
     return (
