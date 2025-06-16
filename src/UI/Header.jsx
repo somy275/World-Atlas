@@ -40,12 +40,12 @@ const Header = ({ data, navValue }) => {
   return (
     <>
       <header
-        className={`fixed bg-[#003f5c] text-[white] w-screen h-[min(13vw,7.5vh)] min-h-[48px] min-[h-[max(10vw,7.3vh)]] md:h-[max(4.2rem,7.3vh)] lg:h-[max(4rem,8.1vh)]  z-[100] font-[serif] flex justify-between items-center px-[2rem] transition-transform duration-[350ms] ${Nav === 1 ? "translate-y-[-100%]" : "translate-y-[0%]"
+        className={`fixed bg-[#003F5C] text-[white] w-screen h-[min(13vw,7.5vh)] min-h-[48px] min-[h-[max(10vw,7.3vh)]] md:h-[max(4.2rem,7.3vh)] lg:h-[max(4rem,8.1vh)]  z-[100] font-[serif] flex justify-between items-center px-[2rem] transition-transform duration-[350ms] ${Nav === 1 ? "translate-y-[-100%]" : "translate-y-[0%]"
           }`}
       >
         <NavLink
           to="/"
-          className=" font-bold  text-[max(1.6rem,6.5vw)] min-[450px]:text-[max(1.7rem,4.5vw)] md:text-[max(2.2rem,3.5vw)] lg:text-[max(clamp(1.6875rem,0.5727rem+1.7418vw,2.75rem),4vh)] text-[#ffd380] drop-shadow-[-2px_-2px_1px_#000]"
+          className=" font-bold  text-[max(1.6rem,6.5vw)] min-[450px]:text-[max(1.7rem,4.5vw)] md:text-[max(2.2rem,3.5vw)] lg:text-[max(clamp(1.6875rem,0.5727rem+1.7418vw,2.75rem),4vh)] text-[#FFD380] drop-shadow-[-2px_-2px_1px_#000]"
         >
           WorldAtlas
         </NavLink>

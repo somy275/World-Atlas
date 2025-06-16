@@ -23,7 +23,7 @@ export const Country = () => {
     const ref = useRef()
     useEffect(() => {
         startTransition(async () => {
-            const res = await getData("/all"); //call the getData method to get all the data from api
+            const res = await getData(`all?fields=${["name,population,capital,region,flags"]} `); //call the getData method to get all the data from api
             setCountryData(res.data) //store the api data
         })
     }, [])

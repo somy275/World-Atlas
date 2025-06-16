@@ -1,7 +1,5 @@
 import emailjs from '@emailjs/browser';
 export const SendOTPInEmail = (GenerateOTP) => {
-    console.log(GenerateOTP);
-
     var templateParams = {
         username: localStorage.getItem('UserName'),
         UserEmail: localStorage.getItem('UserEmail'),

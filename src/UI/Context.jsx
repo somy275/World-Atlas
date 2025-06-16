@@ -1,4 +1,4 @@
-//Creatin a warehouse for providing data to other components
+//Creating a warehouse for providing data to other components
 import { createContext, useContext } from "react"
 
 export const UserContext = createContext();

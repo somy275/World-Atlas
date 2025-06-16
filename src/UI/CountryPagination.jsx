@@ -1,5 +1,4 @@
 import { Pagination } from "@heroui/react";
-import { memo } from "react";
 /* eslint-disable react/prop-types */
 const CountryPagination = ({ totalPages, setCurrentPage }) => {
     let onPage = (e) => { // when the user clicks on the page number then this function is executed
@@ -19,4 +18,4 @@ const CountryPagination = ({ totalPages, setCurrentPage }) => {
 
     )
 }
-export default memo(CountryPagination)
+export default CountryPagination

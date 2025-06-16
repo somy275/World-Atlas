@@ -19,7 +19,7 @@ export const PasswordModify = () => {
             else if (OTP == UserOTP) { //If the otp is  math with the user otp notifyOnSuccess is called
                 notifyOnSuccess("OTP verification successful")
                 setTimeout(() => {
-                    setOTPSuccess(true); //If the otp is math with the user then setOTPSuccess state to true
+                    setOTPSuccess(true); //If the otp is match with the user then setOTPSuccess state to true
                 }, 1400)
             }
         }
@@ -43,8 +43,10 @@ export const PasswordModify = () => {
             setTimeout(() => {
                 window.location.reload(); //When the user directed back to the previous page, then window reload
             }, 1500)
+            setTimeout(() => {
+                alert("Please login to continue")
+            }, 1600)
         }
-        console.log(e);
 
     }
     return (

@@ -22,7 +22,7 @@ export const FindCountryData = ({ children }) => {
             setFilterData(localStorage.getItem("FilterData")) //set the filter data
         }
     }, [])
-    
+
     useEffect(() => { // this hook runs only when AscDesc state is changed
         let sortData = localStorage.getItem("SortData");
         setAscDesc(sortData); // set the sort data
