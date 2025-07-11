@@ -89,7 +89,6 @@ const Header = ({ data, navValue }) => {
               </NavLink>
             </span>
             <span className={navbar}>
-              {Registered ?
                 <NavLink
                   to={"/country"}
                   className={`${navbarAnimation} ${navValue ? "translate-y-[100%]" : " translate-y-[0%]"
@@ -98,10 +97,8 @@ const Header = ({ data, navValue }) => {
                     return { color: isActive ? "#ffd380" : "" };
                   }}
                 >
-                  Country
-                </NavLink> : <span onClick={() => setUserExist(true)} className={`${navbarAnimation} cursor-pointer ${navValue ? "translate-y-[100%]" : " translate-y-[0%]"
-                  }`}>Country</span>
-              }
+                  Country 
+              </NavLink>
             </span>
             <span className={navbar}>
               <NavLink
